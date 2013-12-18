@@ -25,9 +25,11 @@ class RemoveSlashMiddlewareTest(TestCase):
   def test_no_redirect_when_slashed_and_unslashed_invalid(self):
     response = self.client.get('/testapps/invalid/', follow=False)
     self.assertNotIsInstance(response, HttpResponsePermanentRedirect)
+    self.assertEqual(response.status_code, 404)
 
     response = self.client.get('/testapps/invalid', follow=False)
     self.assertNotIsInstance(response, HttpResponsePermanentRedirect)
+    self.assertEqual(response.status_code, 404)
 
   def tearDown(self):
     del self.client
