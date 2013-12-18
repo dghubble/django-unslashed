@@ -1,4 +1,6 @@
 include README.md manage.py LICENSE
-recursive-include test_project *.pyc
-recursive-exclude unslash *.pyc
-recursive-exclude test_project *.pyc
+recursive-include testproject *.py
+recursive-include testapps *.py
+recursive-exclude unslashed *.pyc
+recursive-exclude testproject *.pyc
+recursive-exclude testapps *.pyc

@@ -2,9 +2,9 @@ from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.test import TestCase, Client
 
 from django.middleware.common import CommonMiddleware
-from unslash.middleware import UnslashMiddleware
+from unslashed.middleware import RemoveSlashMiddleware
 
-class UnslashMiddlewareTest(TestCase):
+class RemoveSlashMiddlewareTest(TestCase):
   def setUp(self):
     self.client = Client()
 
@@ -28,7 +28,6 @@ class UnslashMiddlewareTest(TestCase):
 
     response = self.client.get('/testapps/invalid', follow=False)
     self.assertNotIsInstance(response, HttpResponsePermanentRedirect)
-
 
   def tearDown(self):
     del self.client

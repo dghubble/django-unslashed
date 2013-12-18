@@ -6,4 +6,4 @@ python:
 install:
   - python setup.py develop
 script:
-  - python manage.py test unslash
+  - python manage.py test unslashed

@@ -6,10 +6,11 @@ from django.utils.http import urlquote
 from django.utils import six
 
 
-class UnslashMiddleware(object):
+class RemoveSlashMiddleware(object):
     """
     This middleware provides the inverse of the APPEND_SLASH option built into
-    django.middleware.common.CommonMiddleware. It should be placed 
+    django.middleware.common.CommonMiddleware. It should be placed just before
+    or just after CommonMiddleware.
 
     If REMOVE_SLASH is True, the initial URL ends with a slash, and it is not 
     found in the URLconf, then a new URL is formed by removing the slash a the

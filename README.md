@@ -1,6 +1,6 @@
-# django-unslash
+# django-unslashed
 
-[![Build Status](https://travis-ci.org/dghubble/servlib.png)](https://travis-ci.org/dghubble/django-unslash)
+[![Build Status](https://travis-ci.org/dghubble/servlib.png)](https://travis-ci.org/dghubble/django-unslashed)
 
 Django Middleware that can automatically remove trailing URL slashes and 301 
 redirect to the non-slash-terminated URL. This behavior is performed if the
@@ -18,24 +18,24 @@ This middleware provides the inverse of the Django CommonMiddleware
 
 ## Install
 
-To install `django-unslash`,
+To install `django-unslashed`,
 
 ```
-pip install django-unslash
+pip install django-unslashed
 ```
 
-If you're using a `requirements.txt` file, add `django-unslash>=0.1.2` to it.
+If you're using a `requirements.txt` file, add `django-unslashed>=0.2.0` to it.
 
 
 ## Usage
 
-Modify your Django `settings.py` file to add `unslash.middlware.UnslashMiddleware`
+Modify your Django `settings.py` file to add `unslashed.middlware.RemoveSlashMiddleware`
 to your `MIDDLEWARE_CLASSES` just before or after `django.middleware.common.CommonMiddleware`.
 
 ```python
 MIDDLEWARE_CLASSES = (
     # ...
-    'unslash.middleware.UnslashMiddleware',
+    'unslashed.middleware.RemoveSlashMiddleware',
     'django.middleware.common.CommonMiddleware',
     # ...
 )
@@ -48,13 +48,13 @@ APPEND_SLASH = False
 REMOVE_SLASH = True
 ```
 
-If `REMOVE_SLASH` is False or unset, the UnslashMiddleware has no effect and you are free to use the Django CommonMiddleware append slash feature with `APPEND_SLASH=True`.
+If `REMOVE_SLASH` is False or unset, the RemoveSlashMiddleware has no effect and you are free to use the Django CommonMiddleware append slash feature with `APPEND_SLASH=True`.
 
 
 ## Rationale
 
 Web applications should have a URL structure which either (1) uses trailing
-slashes and redirects to append slashes if invalid unslashed URLs are accessed.
+slashes and redirects to append slashes if invalid non-slashed-terminated URLs are accessed.
 (2) uses no trailing slash URLs and removes and redirects to unslahed URLs if
 invalid slash terminated URLs are accessed. The prior is the Django default, 
 while the later is possible by adding this middleware to your project.
@@ -68,9 +68,9 @@ Based closely on Django's APPEND_SLASH CommonMiddleware [implementation](https:/
 ## Testing
 
 ```bash
-$ git clone https://github.com/dghubble/django-unslash.git
-$ cd django-unslash
-$ python manage.py test unslash
+$ git clone https://github.com/dghubble/django-unslashed.git
+$ cd django-unslashed
+$ python manage.py test unslashed
 Creating test database for alias 'default'...
 ...
 ----------------------------------------------------------------------
