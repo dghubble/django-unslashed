@@ -24,6 +24,7 @@ setup(
     install_requires = ['Django>=1.0'],
 
     # Metadata
+    license = 'MIT License',
     keywords = 'django slash remove trailing unslash remove_slash path',
     description = 'Django Middleware that can automatically remove trailing \
     URL slashes and 301 redirect to the non-slash-terminated URL.',

@@ -1,8 +1,10 @@
+from django import http
 from django.conf import settings
 from django.core import urlresolvers
-from django import http
+from django.core.exceptions import ImproperlyConfigured
 from django.utils.http import urlquote
 from django.utils import six
+
 
 class UnslashMiddleware(object):
     """
@@ -32,6 +34,9 @@ class UnslashMiddleware(object):
         host = request.get_host()
         old_url = [host, request.path]
         new_url = old_url[:]
+
+        if getattr(settings, 'APPEND_SLASH') and getattr(settings, 'REMOVE_SLASH'):
+            raise ImproperlyConfigured("APPEND_SLASH and REMOVE_SLASH may not both be True.")
 
         # Remove slash if REMOVE_SLASH is set and the URL has a trailing slash
         # and there is no pattern for the current path
