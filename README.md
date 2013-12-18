@@ -22,7 +22,7 @@ To install `django-unslash`,
 pip install django-unslash
 ```
 
-If you're using a `requirements.txt` file, add `django-unslash>=0.1` to it.
+If you're using a `requirements.txt` file, add `django-unslash>=0.1.1` to it.
 
 
 ## Usage

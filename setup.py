@@ -1,5 +1,14 @@
-from distutils.core import setup
+import os
 from unslash import __version__
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
+def read(filename):
+    return open(os.path.join(os.path.dirname(__file__), filename)).read()
 
 setup(
     # Required information
@@ -18,7 +27,7 @@ setup(
     keywords = 'django slash remove trailing unslash remove_slash path',
     description = 'Django Middleware that can automatically remove trailing \
     URL slashes and 301 redirect to the non-slash-terminated URL.',
-    long_description = 'long description',
+    long_description = read('README.md'),
     classifiers = [
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
