@@ -38,7 +38,6 @@ class UnslashMiddleware(object):
         if getattr(settings, 'REMOVE_SLASH', False) and old_url[1].endswith('/'):
             urlconf = getattr(request, 'urlconf', None)
             if (not urlresolvers.is_valid_path(request.path_info, urlconf)) and urlresolvers.is_valid_path(request.path_info[:-1], urlconf):
-                print "with slash invalid and without IS valid"
                 new_url[1] = new_url[1][:-1]
                 if settings.DEBUG and request.method == 'POST':
                     raise RuntimeError((""

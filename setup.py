@@ -1,9 +1,10 @@
-from distutils.core import setup 
+from distutils.core import setup
+from unslash import __version__
 
 setup(
     # Required information
     name = 'django-unslash',
-    version = '0.0.1',
+    version = __version__,
     author = 'Dalton Hubble',
     author_email = 'dghubble@gmail.com',
     url = 'https://github.com/dghubble/django-unslash',

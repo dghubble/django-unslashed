@@ -58,12 +58,25 @@ invalid slash terminated URLs are accessed. The prior is the Django default,
 while the later is possible by adding this middleware to your project.
 
 
-## Tests
-
-
 ## Notes
 
 Based closely on Django's APPEND_SLASH CommonMiddleware [implementation](https://github.com/django/django/blob/master/django/middleware/common.py).
+
+
+## Testing
+
+```bash
+$ git clone https://github.com/dghubble/django-unslash.git
+$ cd django-unslash
+$ python manage.py test unslash
+Creating test database for alias 'default'...
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+OK
+Destroying test database for alias 'default'...
+```
 
 
 ## License
