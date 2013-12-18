@@ -1,5 +1,7 @@
 # django-unslash
 
+[![Build Status](https://travis-ci.org/dghubble/servlib.png)](https://travis-ci.org/dghubble/django-unslash)
+
 Django Middleware that can automatically remove trailing URL slashes and 301 
 redirect to the non-slash-terminated URL. This behavior is performed if the
 initial URL ends in a slash and is invalid, removing the trailing slash
