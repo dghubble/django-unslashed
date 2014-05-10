@@ -29,7 +29,7 @@ If you're using a `requirements.txt` file, add `django-unslashed>=0.2.0` to it.
 
 ## Usage
 
-Modify your Django `settings.py` file to add `unslashed.middlware.RemoveSlashMiddleware`
+Modify your Django `settings.py` file to add `unslashed.middleware.RemoveSlashMiddleware`
 to your `MIDDLEWARE_CLASSES` just before or after `django.middleware.common.CommonMiddleware`.
 
 ```python
