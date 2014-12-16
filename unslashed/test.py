@@ -55,5 +55,10 @@ class RemoveSlashMiddlewareTest(TestCase):
     self.assertNotIsInstance(response, HttpResponsePermanentRedirect)
     self.assertEqual(response.status_code, 404)
 
+  def test_warns_about_redirect_and_post(self):
+    with self.settings(DEBUG=True):
+      with self.assertRaises(RuntimeError):
+        self.client.post('/testapps/', follow=False)
+
   def tearDown(self):
     del self.client
