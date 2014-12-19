@@ -2,8 +2,6 @@ from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.test import TestCase, Client
 from django.utils.http import urlquote
 
-from django.middleware.common import CommonMiddleware
-from unslashed.middleware import RemoveSlashMiddleware
 
 class RemoveSlashMiddlewareTest(TestCase):
     def setUp(self):

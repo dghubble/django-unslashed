@@ -3,8 +3,6 @@ from django import http
 from django.conf import settings
 from django.core import urlresolvers
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.http import urlquote
-from django.utils import six
 
 
 class RemoveSlashMiddleware(object):
